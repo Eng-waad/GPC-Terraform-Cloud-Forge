@@ -25,7 +25,7 @@ resource "google_compute_instance_template" "front_template" {
 resource "google_compute_instance_group_manager" "front_mig" {
   name               = "frontend-mig"
   base_instance_name = "frontend"
-  target_size        = 2 # سينشئ جهازين تلقائياً
+  target_size        = 2 
   zone               = "us-central1-a"
 
   version {
