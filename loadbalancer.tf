@@ -1,4 +1,4 @@
-# Health Check للتأكد من أن الأجهزة تعمل
+# Health Check ل
 resource "google_compute_health_check" "http_check" {
   name = "http-health-check"
   http_health_check {
@@ -6,7 +6,7 @@ resource "google_compute_health_check" "http_check" {
   }
 }
 
-# Backend Service لربط الـ MIG بالـ Load Balancer
+# Backend Service - MIG - Load Balancer
 resource "google_compute_backend_service" "front_lb_service" {
   name          = "frontend-service"
   health_checks = [google_compute_health_check.http_check.id]
@@ -15,7 +15,7 @@ resource "google_compute_backend_service" "front_lb_service" {
   }
 }
 
-# URL Map لتوجيه الطلبات
+# URL Map  
 resource "google_compute_url_map" "url_map" {
   name            = "web-map"
   default_service = google_compute_backend_service.front_lb_service.id
@@ -27,7 +27,7 @@ resource "google_compute_target_http_proxy" "http_proxy" {
   url_map = google_compute_url_map.url_map.id
 }
 
-# Global Forwarding Rule (هذا سيعطيكِ IP واحد ثابت للموقع بالكامل)
+# Global Forwarding Rule 
 resource "google_compute_global_forwarding_rule" "default" {
   name       = "global-rule"
   target     = google_compute_target_http_proxy.http_proxy.id
