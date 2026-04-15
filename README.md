@@ -1,4 +1,4 @@
-# Automated Multi-Tier Cloud Infrastructure on GCP ☁️
+# Automated Multi-Tier Cloud Infrastructure on GCP 
 
 This repository contains a professional-grade Infrastructure as Code (IaC) project using **Terraform** to deploy a highly available, containerized web application on Google Cloud Platform.
 
