@@ -19,19 +19,17 @@ The project implements a dual-VPC architecture with secure communication and aut
 
 ### 1. Live Web Portal
 The final result showing the frontend engine successfully running inside a Docker container.
-![Frontend Demo](frontend-live-demo.png)
 
 ### 2. Cloud Infrastructure Deployment
 Confirmation of 17 resources successfully provisioned via Terraform Cloud Shell.
-![Terraform Plan](terraform-plan.png)
 
 ### 3. Load Balancing Dashboard
 The GCP Console showing the Global HTTP Load Balancer in a "Healthy" state, routing traffic to backend services.
-![Load Balancer](load-balancer-dashboard.png)
+
 
 ### 4. Code Structure
 Organized Terraform configuration files (`.tf`) for modularity and scalability.
-![Project Structure](terraform-editor-structure.png)
+
 
 ##  How to Deploy
 1. Clone the repository:
